@@ -42,7 +42,7 @@ jobs:
       - name: Clone source
         working-directory: /workdir
         run: |
-          git clone https://github.com/${{ github.repository }} -b $REPO_BRANCH openwrt
+          git clone https://github.com/capviz/immortalwrt-mt798x-6.6 -b $REPO_BRANCH openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
       - name: Update feeds
