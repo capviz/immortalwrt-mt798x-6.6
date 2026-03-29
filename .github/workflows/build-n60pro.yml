@@ -51,12 +51,6 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       
-      - name: Fix missing includes
-        working-directory: /workdir/openwrt
-        run: |
-          sed -i 's|#include "mtk_eth_soc.h"|#include "mtk_eth_soc.h"\n#include "mtk_hnat/nf_hnat_mtk.h"\n#include "mtk_eth_reset.h"|' \
-            target/linux/mediatek/files-6.6/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-      
       - name: Generate config
         working-directory: /workdir/openwrt
         run: |
